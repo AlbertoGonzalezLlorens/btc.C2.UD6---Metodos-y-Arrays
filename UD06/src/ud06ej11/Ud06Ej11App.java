@@ -18,7 +18,7 @@ public class Ud06Ej11App {
 		int ar_a[] = new int [tamaño];
 		//Se llena el vector y se asocia un vector b a este primero
 		ar_a = rellenarValores(ar_a, max);
-		int ar_b[] = ar_a;
+		int ar_b[] = Arrays.copyOf(ar_a, ar_a.length);
 		int ar_mult[] = ar_a;
 		ar_b = rellenarValores(ar_b, max);
 		System.out.println("Array a: "+Arrays.toString(ar_a));
@@ -32,15 +32,15 @@ public class Ud06Ej11App {
 	//Metodo para rellenar valores
 	public static int[] rellenarValores(int vector[], int max) {
 		//Creo una variable de la clase array para que los valores random que entraran sean diferentes para cada vector
-		int vector_a[] = new int [vector.length];
+		//int vector_a[] = new int [vector.length];
 		//creo la variable para obtener los valores random
 		Random rad = new Random();
 		//con un for permito que introduzcan un valor por cada indice
 		for (int i=0; i<vector.length;i++) {
-				vector_a[i]=rad.nextInt(max+1);		
+				vector[i]=rad.nextInt(max+1);		
 		}
 		//System.out.println("Array : "+Arrays.toString(vector));
-		return vector_a;
+		return vector;
 	}
 	
 		
